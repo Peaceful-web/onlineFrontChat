@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*box-sizing: border-box; que indica que o tamanho agora levará em conta até a borda*/
+    font-family: "Inter", sans-serif;
+}
+
+:root{
+    font-size: 16px;
+}
+
+body{
+    background: url("../images/background.png"); /*Fundo vai receber a imagem entre parenteses*/
+    color: #f1f1f1; /*todos os textos dentro do body vão receber a cor branca por padrão*/
+
+
+}
+
+/*ESTILIZANDO A <section class=container> que engloba todos os elementos de login*/
+.container{
+    width: 100%; /*largura de 100% da tela*/
+    height: 100dvh; /*altura vai encobrir 100% da visualização da tela, dvh significa que vai ajustar com o tamanho da barra*/
+    display: flex; /*vai tornar colocar os elementos dentro do container em um flex-box*/
+    align-items: center; /*vai alinhar os items flexbox verticalmente no centro*/
+    justify-content: center; /*vai justificar todos os conteúdos flex-box horizontalmente no centro da tela*/
+
+}
+
+/*Estilizando a <section class = login>*/
+.login{
+    width: 100%; /*vai ocupar 100% da tela*/
+    max-width: 330px; /*largura máxima de 330px dependendo do tamanho da tela*/
+    background-color: #212121; /*Cor em volta da section login  */
+    border-radius: 5px; /*raio de borda 5 px*/
+    padding: 20px; /*preenchimento dentro da sectio até a borda de 20 pixels*/
+    /*display: none; /*esconder o login por enquanto <========= NÃO ESQUECER DE APAGAR*/
+}
+
+.login > h2{ /*.login > h2 indica que vai estilizar unicamente o h2 filho do .login(abaixo do .login)*/
+    text-align: center; /*vai trazer o h2 contendo o texo "Login* para o centro*/
+    font-weight: 600; /*grossura da fonte*/
+    font-size: 1.5rem; /*rem pega a porcetagem do valor padrão da fonte de cada navegador(),no caso: 1.5% de 16 px*/
+    margin-bottom: 20px; /*margem inferior de 20 pixel de distância com o elemento input*/
+
+}
+
+/*Estilizando o formulário de login (input e button)*/
+.login__form{
+    display: flex; /*vai tornar este elemento um flexbox*/
+    flex-direction:column; /*vai alinhar os elementos flexbox um em cima do outro em colunas*/
+    gap: 15px; /*margem de 15 pixels entre os elementos dentro do login__form*/
+
+}
+
+.login__input{
+    border: none; /*remove a borda do input*/
+    padding: 15px;/*preenchimento interno de 15 pixels no login__input*/
+    font-size: 0.85rem;/*vai pegar 0.85% do font-size padrão do navegador*/
+    font-weight: 600; /*grossura da fonte de 600*/
+    background-color: #121212; /*cor de fundo*/
+    color: #f2f2f2; /*cor do texto do input*/
+    outline: none; /*remove a linha externa em volta do input*/
+    border-radius: 5px; /*raio de borda de 5 pixels no input*/
+}
+
+.login__input:focus { /*pseudo class focus é quando o login__input está selecionado*/
+    outline: 2px solid #f2f2f2; /*uma linha externa de 2 px em volta do input de cor branca aparece*/
+}
+
+/*Estilizando o botão Entrar*/
+.login__button{
+    border: none; /*remove a borda ao redor do botão*/
+    padding: 15px; /*preenchimento interno de 15 pixels*/
+    border-radius: 5px; /*raio de borda de 5 pixels*/
+    font-size: 0.85rem; /*tamanho da fonte vai pegar 0.85% da fonte padrão do navegador*/
+    font-weight: 700; /*grossura da fonte*/
+    background-color: #ddd; /*cor de fundo*/
+    cursor: pointer; /*o cursor vai vira uma mãozinha quando estiver em cima do botão*/
+    color: #121212; /*cor da fonte (do texto)*/
+}
+
+.login__button:hover{ /*:hover é quando o usuário arrastar o mouse em cima do logint__button*/
+    background-color: #fff;
+}
+
+/*ESTILIZANDO A <section class=chat> que engloba todo conteúdo relacionado ao chat*/
+.chat{
+    /*background-color: #555; /*cor de fundo em hexadecimal*/
+    width: 100%; /*section chat vai ocupar 100% da largura da tela*/
+    height: 100%; /*chat vai ocupar 100% da altura da tela*/
+    /*esta section vai ocupar 100% do container por este ter um height de 100dvh*/ /*display: none provisório*/
+    display: none; /*display: do tipo flexbox, remover depois, colocar none*/
+    flex-direction: column; /*vai alinhar todos os elementos flex desta section um abaixo do outro*/
+    justify-content: space-between; /*vai cria um espaço entre os elementos*/
+
+}
+
+/*Section que contém as mensagens do usuário*/
+.chat__messages{
+    /*background-color: #777;*/
+    flex-grow: 1; /*vai crescer o tamanho desta section ccobrindo a tela inteira*/
+    padding: 30px 30px 90px; /*preenchimento de 30 pixels em cima, 30 pixels na esquerda e na direita, e 90 pixels em baixo da section contendo a div message__self*/
+    display: flex;
+    flex-direction: column;
+    /*justify-content: space-between; /*cria um espaço entre os elemento um abaixo do outro*/
+    justify-content: flex-end; /*os elementos ficaram alinhados no final da section, no lado esquerdo*/
+
+}
+
+.chat__form{
+    background-color: #191919;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center; /*vai alinhar os itens verticalmente no centro(dentro da section)*/
+    gap: 10px; /*margem de 10 pixel de distância entre cada elemento*/
+    position: fixed; /*vai tornar o formulário fixo na tela independente do tamanho*/
+    bottom: 0; /*margem inferior: 0, vai ficar no canto mais baixo da tela*/
+    left: 0; /*a imagem ficará completamente à esquerda da tela (0 de distância)*/
+    width: 100%; /*vai ocupar 100% da largura da tela*/
+
+}
+
+.chat__input{
+    border: none; /*remove a borda*/
+    padding: 15px; /*preenchimento de 15 pixel do botão input*/
+    border-radius: 8px; /*raio de borda: 8 pixels*/
+    flex-grow: 1; /*o botão input vai crescer e ocupar toda a tela dentro do formulário chat__form*/
+    background-color: #212121; /*cor de fundo do botão input*/
+    outline: none; /*remove a linha externa em volta do input quando selecionado*/
+    color: #f2f2f2;/*cor do texto*/
+    font-size: 1rem; /*tamanho da fonte: 1% do foo*/
+}
+
+/*ESTILIZANDO O button enviar*/
+.chat__button{
+    border: none; /**/
+    background: none; /*remvendo o fundo do botão*/
+    color: #f2f2f2; /*cor do botão*/
+    cursor: pointer; /*cursor de mãozinha ao arrastar o mouse por cima do botão*/
+
+}
+
+/*acessando o span dentro do botão chat__button*/
+.chat__button > span { 
+    font-size: 1.8rem; /*tamanho de 1.8% relativo ao font size padrão do navegador*/
+}
+
+/*estilizando a div filha da section chat__messages*/
+.chat__messages > div {
+    padding: 10px; /*preenchimento interno de 10 pixels*/
+    width: 100%; /*largura vai ocupar 100% da tela*/
+    max-width: 250px; /*a largura máxima vai ser de 250px dependendo do tamanho da tela*/
+    font-size: 0.9rem;
+    font-weight: 500; /*peso da fonte*/
+    margin-bottom: 15px; /*margem inferior de 15 pixels com os elementos abaixo*/
+    line-height: 22px; /*espaço entre as linhas de texto*/
+}
+
+/*Estilizando a div contendo a mensagem do usuário*/
+.message__self{
+    
+    background-color: #f2f2f2;
+    color: #121212; /*cor do texto*/
+    border-radius: 10px 10px 0px 10px; /*raio de borda de 10 pixel cada valor representa uma quina da borda no sentido horário*/
+    align-self: flex-end; /*vai alinhar os items no final da section à direita*/
+
+}
+
+.message__other{
+    background-color: #333;
+    color: #f2f2f2; /*cor do texto*/
+    border-radius: 0px 10px 10px 10px; /*raio de borda de 10 pixel cada valor representa uma quina da borda no sentido horário*/
+    align-self: flex-start; /*vai alinhar os items no final da section à esquerda*/
+}
+
+/*Span contendo o nome do usuário*/
+.message__sender{
+    display: block; /*o elemento fica acima do message__other*/
+    margin-bottom: 15px; /*margem inferior de 15 pixels*/
+    font-weight: 700; /*fonte um pouco mais grossa para se destacar*/
+    color: cadetblue; /*cor da fonte*/
+
+}
